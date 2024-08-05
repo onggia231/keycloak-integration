@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "80b75be5-9356-4391-ba8d-6e039308834c",
+		"name": "KeyCloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16988973"
+	},
+	"item": [
+		{
+			"name": "discovery Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8180/realms/devteria/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"realms",
+						"devteria",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exchange Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "devteria_app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "cI4pwMtF3qWKwcC5b1QQBczopOU8aptE",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "james",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8180/realms/devteria/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"realms",
+						"devteria",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get UserInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ3c2tLeWFzODNWM1BEQU9jMkhNR2ktUGx0a1BHWlA5SGNEY0o1a01mTDNjIn0.eyJleHAiOjE3MTg0MzU2NzgsImlhdCI6MTcxODQzNTM3OCwianRpIjoiNzRjMjViMTUtOGM0YS00OTU3LWJiNTEtYTc3Y2Q4ZDFkYTJjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9kZXZ0ZXJpYSIsInN1YiI6IjQ2Nzk5MTEzLWI2OTktNDljYS1hOTcxLTMwNTExMWUwMzdiNCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImRldnRlcmlhX2FwcCIsInNlc3Npb25fc3RhdGUiOiI4MGMyZjliNi05MDdhLTRjMDItOWNmMS1lNzE5OWY3ODFlNGQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImNyZWF0ZV9wb3N0Il19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiODBjMmY5YjYtOTA3YS00YzAyLTljZjEtZTcxOTlmNzgxZTRkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiSmFtZXMgQm9uZCIsInByZWZlcnJlZF91c2VybmFtZSI6ImphbWVzIiwiZ2l2ZW5fbmFtZSI6IkphbWVzIiwiZmFtaWx5X25hbWUiOiJCb25kIiwiZW1haWwiOiJqYW1lc0BnbWFpbC5jb20ifQ.To9R1hocXs2590ow3ykwkuGkOpn2LPh1ajLZZRBAn4Nf6N63PfXpQntjg4GaDYlov-b6-uOiqXMrbmMfwYRr8qvX1kBYjkYxA-U6HQsrZAOcmVPg48gEKl0zuxJhfkiSV1fb1drwhnnIsKvRalhPq-3M-KX6pH5le_jQZiCBIrtN761A4axb7tfzC7w8ZSL2hHDge6DXTYfnLn_zu5WW0k1uBjC7ZfQbO5yBMUPDOPUs_pQdKtlWBCqh7Q3YMq-skIddNymdw2K7PvPEhJ2buk4pCzLG2Pgz_C3DJbISSOA_HDUZRw7D_AZOQNihvtyG13dnkMrA2UHC9i5TXSyNGw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8180/realms/devteria/protocol/openid-connect/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"realms",
+						"devteria",
+						"protocol",
+						"openid-connect",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
