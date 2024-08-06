@@ -7,6 +7,66 @@
 	},
 	"item": [
 		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"james\",\r\n    \"password\": \"12345678\",\r\n    \"email\": \"james@yopmail.com\",\r\n    \"firstName\": \"James\",\r\n    \"lastName\": \"Bond\",\r\n    \"dob\": \"2000-04-08\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/profile/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Profiles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/profile/profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "discovery Endpoint",
 			"request": {
 				"method": "GET",
@@ -53,7 +113,7 @@
 						},
 						{
 							"key": "username",
-							"value": "johndoe",
+							"value": "james",
 							"type": "text"
 						},
 						{
@@ -175,7 +235,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmT01JU1MwckJwanN2MEJVQi1sNDVhRkJUVmpnUkRKVmhNNTNOR0huMTZZIn0.eyJleHAiOjE3MTkwMjgyOTYsImlhdCI6MTcxOTAyNzk5NiwianRpIjoiNDU1OWZmODYtZDhjNC00Y2IxLTg0NzktYjQ0MzkxMmQwYjZiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9kZXZ0ZXJpYSIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiI3ZjU2NWJiMS1hNzI1LTQwZWItOThiZi01NzllZmM4Y2E0NDAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZXZ0ZXJpYV9hcHAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWRldnRlcmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxNzIuMTcuMC4xIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWRldnRlcmlhX2FwcCIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIiwiY2xpZW50X2lkIjoiZGV2dGVyaWFfYXBwIn0.M14L6mRgqjx3MoPGKgjHP90D7GIYjs3gqNkkiS5Hv-jrxs3P4mV6FhXIzQp29InGTlo1TZTe-_2zfRT5TGR5jUMAyR8KTXnFtWjrmDOUCOFb8E1ofT-vMQ9Fsq4gAXXwggsdPI8UmOtR2NTbZUFFFGxPrlOq0V8oHcPvEEy2NSW1bLjuwjX0I700kbqK_edUGLHpt7nOTzd7sA66WmI-2N-f24oWlBxy3IcD3zVZlM1Wgj-LaSNdpaNp6GlDA7XrdyUWBKsnJKAAIyjCrqH4dClNFcFAw43cNnkunCV7CFXS3VZrpxc2TChnsTaoyn6kaEDs6-38IM21Kh47B5ZUNA",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmT01JU1MwckJwanN2MEJVQi1sNDVhRkJUVmpnUkRKVmhNNTNOR0huMTZZIn0.eyJleHAiOjE3MjA5NTEwNjIsImlhdCI6MTcyMDk1MDE2MiwianRpIjoiMjZiNjcyOWItZTlkNi00Yzg3LWFiYmMtNDdmY2NmNDQ0ZDY0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9kZXZ0ZXJpYSIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJjMmY5N2IxYi1mYTZlLTRjM2UtODczMy02MTdjNzkyNWNiYzgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZXZ0ZXJpYV9hcHAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLWRldnRlcmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxNzIuMTcuMC4xIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWRldnRlcmlhX2FwcCIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIiwiY2xpZW50X2lkIjoiZGV2dGVyaWFfYXBwIn0.HN3EX-QyIjElpd1kmKQgapdwu0juBlo6d-D4Jam-HUkVvlV0KvJDUKK3xuEBx0i9T1Q8SVPY4mCbXhqmyJOB4KA4JbqdJrlWZD6KN1mxGi6HBekOeM-Xlg9GRUXDgfqh7WORtdtUfprjapLMzDpzsIE1fP5lAcnsV_5PNfF0aZpdG-oY8bGdJadRewijzUTjg78Qp3niZitjM0zH5YDRjzkIWMXZi9kDU5wIqYgu6JqVW_hnnoy5-D5OmgEyTankli-S5sReoK68AgfbQsQMxXF7BXafSaS6h-pV3LezV-pqECjVMGOwLNAo-ctcycvQ30yad05kZ30uHB-0xQxj8A",
 							"type": "string"
 						}
 					]
@@ -184,7 +244,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"username\": \"johndoe\",\r\n  \"enabled\": true,\r\n  \"email\": \"johndoe@yopmail.com\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"credentials\": [\r\n    {\r\n      \"type\": \"password\",\r\n      \"value\": \"12345678\",\r\n      \"temporary\": false\r\n    }\r\n  ]\r\n}",
+					"raw": "{\r\n    \"username\": \"johndoe\",\r\n    \"enabled\": true,\r\n    \"email\": \"johndoe@yopmail.com\",\r\n    \"emailVerified\": true,\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"credentials\": [\r\n        {\r\n            \"type\": \"password\",\r\n            \"value\": \"12345678\",\r\n            \"temporary\": false\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

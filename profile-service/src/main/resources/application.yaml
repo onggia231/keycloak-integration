@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /profile
+spring:
+  application:
+    name: profile-service
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017/profile-service?authSource=admin
+
+idp:
+  url: http://localhost:8180
+  client-id: ${CLIENT_ID}
+  client-secret: ${CLIENT_SECRET}

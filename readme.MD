@@ -12,7 +12,7 @@
 
 ## Prerequisites
 
-### Install KeyCloak on Docker
+### Install KeyCloak on Docker 
 
 `docker pull quay.io/keycloak/keycloak:25.0.0`
 
