@@ -9,6 +9,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +33,9 @@ public class ProfileController {
 
     @GetMapping("/profiles")
     ApiResponse<List<ProfileResponse>> getAllProfiles() {
+        // Thong tin user dang nhap
+        var authentication = SecurityContextHolder.getContext().getAuthentication();
+
         return ApiResponse.<List<ProfileResponse>>builder()
                 .result(profileService.getAllProfiles())
                 .build();

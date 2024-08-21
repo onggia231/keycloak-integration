@@ -39,6 +39,23 @@ Run keyCloak on port 8180
       - Create user: Username: baochau, email:ngobaochau0103@gmail.com, Firstname: Chau, Lastname: Bao
         - Credentials( Create password - 12345678): Temporary: off (Neu de on thi ban dau se bat tao password moi)
 
+## Tao Role tren web KetCloak (http://localhost:8180/)
+1. Chon Realm roles -> Create role (ADMIN,USER, STAFF) -> SAVE
+2. Chon Users (Vd: chon user la james) -> Role mapping -> Assign role -> Filter by realm roles -> Tich Role -> Assign
+   -> Kiem tra xem da gan thanh cong hay chua -> Vao postman call api exchange Token (username, pass muon check) -> Lay token roi vao https://jwt.io/ de giai ma xem da co Role chua (xem: realm_access -> roles)
+3. Trong KeyCloak no phan chia Role va role nho hon (Giong kieu Role, Permission)
+   -> Tao role nho hon -> Create role (vd: VIEW_POST) de assign no cho Role USER -> Realm roles (USER) (Vao Role lon de add role nho) -> Combobox chon Add associated roles -> Filter by realm roles (Chon: VIEW_POST) 
+4. Group (Tao nhieu Role trong do) 
+   -> Chon Group -> Create a group(Test Group) -> Chon Test Group vua tao -> Role mapping -> Assign role -> Filter by realm roles -> Vd: Chon role USER, STAFF
+   -> Assign cai Group cho 1 user -> Chon Users (johndoe) -> Group -> Join Group -> Chon Test Group (user chua role lon va role nho luon)
+   -> Group nen biet con chu yeu dung Realm roles
+5. Tao Role mac dinh (Khi 1 user duoc tao se co Role do) 
+   -> Chon Realm settings -> User registration -> Default roles -> Assign role -> Filter by realm roles (USER - phan quyen mac dinh la USER cho cac user duoc tao moi)
+
+
+
+
+
 
 - Luu y:
  - Duong dan api (discovery Endpoint): http://localhost:8180/realms/devteria/.well-known/openid-configuration (realms/devteria: realms theo ten da dat config tren web KeyCloak)
